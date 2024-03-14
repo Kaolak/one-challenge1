@@ -1,35 +1,54 @@
 .encriptador {
-  background-color: #f3f5fc;
+  background-color: var(--light-bluelight-blue-100);
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
-
+textarea{
+  border: none;
+  resize: none;
+  border-radius: 24px;
+  width: 80%;
+  padding: 30px;
+  font-family: "Inter", Helvetica;
+  color:var(--graygray-500);
+  font-size: 16px;
+}
+textarea:focus{
+  outline: none;
+}
+.input-section{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  gap: 25px;
+}
 .encriptador .div {
   background-color: var(--light-bluelight-blue-100);
-  width: 1440px;
-  height: 1024px;
-  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .encriptador .overlap-group {
-  position: absolute;
-  width: 400px;
-  height: 944px;
-  top: 40px;
-  left: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  padding: 20px 10px;
+  height: 90%;
   background-color: var(--white);
   border-radius: 32px;
   box-shadow: var(--shadow);
 }
 
 .encriptador .mueco {
-  position: absolute;
-  width: 336px;
-  height: 304px;
-  top: 243px;
-  left: 32px;
+  width: 90%;
+  
+  margin-bottom: 10px;
 }
 
 .encriptador .frame {
@@ -38,13 +57,9 @@
   width: 336px;
   align-items: flex-start;
   gap: 16px;
-  position: absolute;
-  top: 579px;
-  left: 32px;
 }
 
 .encriptador .text-wrapper {
-  position: relative;
   align-self: stretch;
   margin-top: -1px;
   font-family: "Inter", Helvetica;
@@ -57,7 +72,6 @@
 }
 
 .encriptador .p {
-  position: relative;
   align-self: stretch;
   font-family: "Inter", Helvetica;
   font-weight: 400;
@@ -69,10 +83,6 @@
 }
 
 .encriptador .text-wrapper-2 {
-  position: absolute;
-  width: 577px;
-  top: 167px;
-  left: 240px;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: var(--dark-bluedark-blue-300);
@@ -83,89 +93,68 @@
 
 .encriptador .frame-2 {
   display: flex;
-  width: 680px;
-  align-items: flex-start;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
-  position: absolute;
-  top: 885px;
-  left: 240px;
 }
 
 .encriptador .button {
-  all: unset;
+  /* all: unset; */
   box-sizing: border-box;
   display: flex;
-  width: 328px;
+  width: fit-content;
   align-items: flex-start;
   gap: 8px;
-  padding: 24px;
-  position: relative;
+  color:#d8dfe8;
+  font-size: 16px;
+  font-weight: 550;
+  padding: 12px 30px;
   background-color: var(--dark-bluedark-blue-300);
-  border-radius: 24px;
+  border-radius: 16px;
+  border:none;
 }
 
-.encriptador .button-2 {
-  all: unset;
-  box-sizing: border-box;
-  position: relative;
-  flex: 1;
-  margin-top: -1px;
-  font-family: "Inter", Helvetica;
-  font-weight: 400;
-  color: var(--white);
-  font-size: 16px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
 
 .encriptador .button-wrapper {
-  all: unset;
+  /* all: unset; */
   box-sizing: border-box;
   display: flex;
-  width: 328px;
+  width: fit-content;
   align-items: flex-start;
   gap: 8px;
-  padding: 24px;
-  position: relative;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 550;
   background-color: #d8dfe8;
-  border-radius: 24px;
+  border-radius: 16px;
   border: 1px solid;
   border-color: var(--dark-bluedark-blue-300);
 }
-
-.encriptador .button-3 {
-  all: unset;
-  box-sizing: border-box;
-  position: relative;
-  flex: 1;
-  margin-top: -1px;
-  font-family: "Inter", Helvetica;
-  font-weight: 400;
-  color: var(--dark-bluedark-blue-300);
-  font-size: 16px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
+button{
+  transition: all 0.5s;
 }
+button:hover{
+  transform: scale(1.1);
+}
+button:active{
+  transform: scale(1.2);
+}
+
 
 .encriptador .frame-3 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  position: absolute;
-  top: 851px;
-  left: 240px;
 }
 
 .encriptador .bi-exclamation {
-  position: relative;
+  
   width: 16px;
   height: 16px;
 }
 
 .encriptador .text-wrapper-3 {
-  position: relative;
   width: fit-content;
   margin-top: -1px;
   opacity: 0.8;
@@ -177,11 +166,32 @@
   line-height: 18px;
   white-space: nowrap;
 }
-
+header{
+  width: 100%;
+}
 .encriptador .logo {
-  position: absolute;
+  margin: 40px 20px;
   width: 120px;
   height: 48px;
-  top: 40px;
-  left: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  html{
+    height: auto;
+  }
+  .encriptador .div{
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .encriptador{
+    height: 100%;
+  }
+  .encriptador .overlap-group{
+    width: 50%;
+    min-width: fit-content;
+  }
+  .input-section{
+    width: 70%;
+  }
 }
