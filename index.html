@@ -15,25 +15,37 @@
       <div class="div">
         <div class="input-section">
           <div class="text-wrapper-2">Ingrese el texto aqui</div>
-          <textarea name="message" id="" cols="30" rows="10"></textarea>
+          <textarea name="message" id="message" cols="30" rows="10" onkeyup="this.value = this.value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^0-9A-Za-z]+/g, '');"></textarea>
           <div class="frame-2">
-            <button class="button">Encriptar</button>
-            <button class="button-wrapper">Desencriptar</button>
+            <button class="button" onclick="showMessage('Encriptado')">Encriptar</button>
+            <button class="button-wrapper" onclick="showMessage('Desencriptado')">Desencriptar</button>
           </div>
           <div class="frame-3">
             <img class="bi-exclamation" src="img/bi-exclamation-circle-fill.svg" />
             <p class="text-wrapper-3">Solo letras minúsculas y sin acentos</p>
           </div>
         </div>
-        <div class="overlap-group">
+        <div class="overlap-group" id="showMsg">
           <img class="mueco" src="img/mu-eco.png" />
           <div class="frame">
             <div class="text-wrapper">Ningún mensaje fue encontrado</div>
-            <p class="p">Ingresa el texto que desees encriptar o desencriptar.</p>
+            <p class="p" >Ingresa el texto que desees encriptar o desencriptar.</p>
           </div>
         </div>
         
       </div>
     </div>
+  <script src="app.js"></script>
+  <script>
+    function showMessage(f){
+      message=document.getElementById("message").value;
+      if(f==='Encriptado') message= encrypt(message);
+      else message= decrypt(message);
+
+      container=document.getElementById("showMsg");
+      container.innerHTML=`<div class="text-wrapper">Mensaje ${f}</div>
+      <p class="p" id="msg">${message}</p>`;
+    }
+  </script>
   </body>
 </html>

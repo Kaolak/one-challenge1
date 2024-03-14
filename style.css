@@ -14,6 +14,7 @@ textarea{
   font-family: "Inter", Helvetica;
   color:var(--graygray-500);
   font-size: 16px;
+  text-transform: lowercase
 }
 textarea:focus{
   outline: none;
@@ -69,6 +70,7 @@ textarea:focus{
   text-align: center;
   letter-spacing: 0;
   line-height: 28.8px;
+  padding: 0 20px;
 }
 
 .encriptador .p {
@@ -115,7 +117,9 @@ textarea:focus{
   border:none;
 }
 
-
+#msg{
+  min-width: 200px;
+}
 .encriptador .button-wrapper {
   /* all: unset; */
   box-sizing: border-box;
@@ -190,6 +194,7 @@ header{
   .encriptador .overlap-group{
     width: 50%;
     min-width: fit-content;
+    min-height: 80px;
   }
   .input-section{
     width: 70%;
