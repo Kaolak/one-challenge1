@@ -12,12 +12,12 @@ function encrypt(message){
 
 function decrypt(message){
 
-    message=message.replaceAll("enter", "e");
-    message=message.replaceAll("imes", "i");
-    message=message.replaceAll("ai", "a");
-    message=message.replaceAll("ober", "o");
-    message=message.replaceAll("ufat", "u");
-    
+    message=message.replaceAll("enter", "E");
+    message=message.replaceAll("imes", "I");
+    message=message.replaceAll("ai", "A";
+    message=message.replaceAll("ober", "O");
+    message=message.replaceAll("ufat", "U");
+    message=message.toLowerCase();
     return message;
 
 }
