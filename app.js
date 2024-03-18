@@ -14,7 +14,7 @@ function decrypt(message){
 
     message=message.replaceAll("enter", "E");
     message=message.replaceAll("imes", "I");
-    message=message.replaceAll("ai", "A";
+    message=message.replaceAll("ai", "A");
     message=message.replaceAll("ober", "O");
     message=message.replaceAll("ufat", "U");
     message=message.toLowerCase();
